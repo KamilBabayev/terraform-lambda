@@ -1,6 +1,6 @@
-resource "aws_iam_role" "consultants_admin_role" {
+resource "aws_iam_role" "terraform-sso-aws-gs-sandbox-admin" {
 #   name = var.Roles["admin"]
-name = "consultants_admin_role"
+name = "terraform-sso-aws-gs-sandbox-admin"
 
   assume_role_policy = <<EOF
 {
@@ -24,9 +24,9 @@ EOF
 }
 
 
-resource "aws_iam_role" "consultants_engineer_role" {
+resource "aws_iam_role" "terraform-sso-aws-gs-sandbox-engineer" {
 #   name = var.Roles["engineer"]
-    name = "consultants_engineer_role"
+    name = "terraform-sso-aws-gs-sandbox-engineer"
 
   assume_role_policy = <<EOF
 {
@@ -49,8 +49,8 @@ EOF
   }
 }
 
-resource "aws_iam_policy" "consultants_admin_policy" {
-name = "consultants_admin_policy"
+resource "aws_iam_policy" "terraform-sso-aws-gs-sandbox-admin-policy" { 
+name = "terraform-sso-aws-gs-sandbox-admin-policy"
 
   policy = <<EOF
 {
@@ -66,8 +66,21 @@ name = "consultants_admin_policy"
 EOF
 }
 
-resource "aws_iam_policy" "consultants_engineer_policy" {
-name = "consultants_engineer_policy"
+resource "aws_iam_policy" "terraform-sso-aws-gs-sandbox-engineer-policy" {
+    name = "terraform-sso-aws-gs-sandbox-engineer-policy"
+
+#   policy = <<EOF
+# {
+#     "Version": "2012-10-17",
+#     "Statement": [
+#         {
+#             "Effect": "Allow",
+#             "Action": "*",
+#             "Resource": "*"
+#         }
+#     ]
+# }
+# EOF
 
     policy = file("policy.json")
 
@@ -75,13 +88,13 @@ name = "consultants_engineer_policy"
 
 resource "aws_iam_policy_attachment" "consultants_admin_attachement" {
   name = "consultants_admin_attachement"
-  roles = [ aws_iam_role.consultants_admin_role.name ]
-  policy_arn = aws_iam_policy.consultants_admin_policy.arn
+  roles = [ aws_iam_role.terraform-sso-aws-gs-sandbox-admin.name ]
+  policy_arn = aws_iam_policy.terraform-sso-aws-gs-sandbox-admin-policy.arn
 }
 
 resource "aws_iam_policy_attachment" "consultants_engineer_attachement" {
   name = "consultants_engineer_attachement"
-  roles = [ aws_iam_role.consultants_engineer_role.name ]
-  policy_arn = aws_iam_policy.consultants_engineer_policy.arn
+  roles = [ aws_iam_role.terraform-sso-aws-gs-sandbox-engineer.name ]
+  policy_arn = aws_iam_policy.terraform-sso-aws-gs-sandbox-engineer-policy.arn
 }
 

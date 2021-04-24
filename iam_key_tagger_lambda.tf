@@ -1,7 +1,8 @@
 resource "aws_lambda_function" "terraform_iam_key_tagger" {
    function_name = "terraform_iam_key_tagger"
    filename = "iam_key_tagger.zip"
-   handler = "lambda.handler"
+  #  handler = "lambda.lambda_handler"
+   handler = "iam_key_tagger.lambda_handler"
    runtime = "python3.8"
    role = aws_iam_role.terraform_iam_key_tagger_role.arn
 }

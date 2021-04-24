@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" entityID="https://sso.percona.com/dag/saml2/idp/metadata.php">
+  <md:IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIIDYTCCAkmgAwIBAgIBADANBgkqhkiG9w0BAQsFADBLMQswCQYDVQQGEwJVUzELMAkGA1UECAwCTUkxEjAQBgNVBAcMCUFubiBBcmJvcjEbMBkGA1UECgwSRHVvIFNlY3VyaXR5LCBJbmMuMB4XDTE3MDUwODE4MjkwMVoXDTI3MDUwNjE4MjkwMVowSzELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAk1JMRIwEAYDVQQHDAlBbm4gQXJib3IxGzAZBgNVBAoMEkR1byBTZWN1cml0eSwgSW5jLjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMcNwlJ9Uo1r9joVnNT/1DdfJ7zOEIyT6sdakfM6z6KS7sDqiobj2qwmFmoPRSXMvHztbdlJlPqKi42w2prJqlYQLaJ8ePEmfCBEXFy9l3H3+PP0k3Co/OAwV8KGooUvH4NKrAc/R8SA5iY1wrGN6wq3uxsANZQ3VDtUmX2wPU6a5fLvG5o03U5LZi9ifD21v/U8oI21kEVWF3uxddco9ttkElMQFqB+6UU/ypFBlO0lnBuy6NV84XhqNCjLo0E+4ikGk15m6mpUzUe4hws5Hhx1p6+3tgOzx3MGbkjNpLEmokkS/nP5Ccf5s2bp0UlgUOSY/lGVHOdCE0GqRsIlzPMCAwEAAaNQME4wHQYDVR0OBBYEFP+d1M+4Z68NJ2klLbWcol3dULCGMB8GA1UdIwQYMBaAFP+d1M+4Z68NJ2klLbWcol3dULCGMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBABJ+ga8kTqLbCwShqnlvbiffPmXwHjJEmf3IOl31GLSsHb4LcgBifY17MXOU4+C1tB4NjsTQVnLpNo6KWQuYq7k85G4Dt9eO4hO0LdvHhNlFluFa4vNa+Pk2keR5dYlpTiKtNsvJPe87lYE0SpBhMrEYSG9QJYVEgGRRTu+p21gDb0h5QwGAEOkgkmYbtDhgCFcSJ4HYcs8FOI6NVLrzcYXNwU5Rx4n+11COfPV/j9CkzzncYXlHu86l0OdDTOwi8MNkLcONLOeC68aeOYxEPTUW5H/PGLKYMeXkhnc5oeOibl2ZggEV9u45IDZ5f5xcB/C5iH+HsbrKjLve6d08Ek8=</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor use="encryption">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIIDYTCCAkmgAwIBAgIBADANBgkqhkiG9w0BAQsFADBLMQswCQYDVQQGEwJVUzELMAkGA1UECAwCTUkxEjAQBgNVBAcMCUFubiBBcmJvcjEbMBkGA1UECgwSRHVvIFNlY3VyaXR5LCBJbmMuMB4XDTE3MDUwODE4MjkwMVoXDTI3MDUwNjE4MjkwMVowSzELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAk1JMRIwEAYDVQQHDAlBbm4gQXJib3IxGzAZBgNVBAoMEkR1byBTZWN1cml0eSwgSW5jLjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMcNwlJ9Uo1r9joVnNT/1DdfJ7zOEIyT6sdakfM6z6KS7sDqiobj2qwmFmoPRSXMvHztbdlJlPqKi42w2prJqlYQLaJ8ePEmfCBEXFy9l3H3+PP0k3Co/OAwV8KGooUvH4NKrAc/R8SA5iY1wrGN6wq3uxsANZQ3VDtUmX2wPU6a5fLvG5o03U5LZi9ifD21v/U8oI21kEVWF3uxddco9ttkElMQFqB+6UU/ypFBlO0lnBuy6NV84XhqNCjLo0E+4ikGk15m6mpUzUe4hws5Hhx1p6+3tgOzx3MGbkjNpLEmokkS/nP5Ccf5s2bp0UlgUOSY/lGVHOdCE0GqRsIlzPMCAwEAAaNQME4wHQYDVR0OBBYEFP+d1M+4Z68NJ2klLbWcol3dULCGMB8GA1UdIwQYMBaAFP+d1M+4Z68NJ2klLbWcol3dULCGMAwGA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBABJ+ga8kTqLbCwShqnlvbiffPmXwHjJEmf3IOl31GLSsHb4LcgBifY17MXOU4+C1tB4NjsTQVnLpNo6KWQuYq7k85G4Dt9eO4hO0LdvHhNlFluFa4vNa+Pk2keR5dYlpTiKtNsvJPe87lYE0SpBhMrEYSG9QJYVEgGRRTu+p21gDb0h5QwGAEOkgkmYbtDhgCFcSJ4HYcs8FOI6NVLrzcYXNwU5Rx4n+11COfPV/j9CkzzncYXlHu86l0OdDTOwi8MNkLcONLOeC68aeOYxEPTUW5H/PGLKYMeXkhnc5oeOibl2ZggEV9u45IDZ5f5xcB/C5iH+HsbrKjLve6d08Ek8=</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://sso.percona.com/dag/saml2/idp/SingleLogoutService.php"/>
+    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://sso.percona.com/dag/saml2/idp/SingleLogoutService.php"/>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:WindowsDomainQualifiedName</md:NameIDFormat>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:kerberos</md:NameIDFormat>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://sso.percona.com/dag/saml2/idp/SSOService.php"/>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://sso.percona.com/dag/saml2/idp/SSOService.php"/>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://sso.percona.com/dag/saml2/idp/SSOService.php"/>
+  </md:IDPSSODescriptor>
+</md:EntityDescriptor>

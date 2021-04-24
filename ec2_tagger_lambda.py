@@ -14,5 +14,7 @@ def lambda_handler(event, context):
     elif str(event['detail']['userIdentity']['type']) == "IAMUser":
         principalId = str(event['detail']['userIdentity']['arn'].split('/')[1])
         #principalId = principalId.split('-')[0] + '@percona.com'
+    elif str(event['detail']['userIdentity']['type']) == "Root":
+        principalId = str(event['detail']['userIdentity']['principalId'])
         
     ec2.create_tags(Resources=[instance_id], Tags=[{'Key': tag_key, 'Value': principalId}])

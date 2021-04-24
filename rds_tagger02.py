@@ -15,6 +15,8 @@ def lambda_handler(event, context):
             principalId = str(event['detail']['userIdentity']['arn'].split('/')[1])
             #principalId = principalId.split('-')[0] + '@percona.com'
              #print(principalId, instance_id)
+        elif str(event['detail']['userIdentity']['type']) == "Root":
+            principalId = 'CreatedByRootUserFromWebInterface'
         try:
             rds.add_tags_to_resource(ResourceName=instance_id, Tags=[{'Key': tag_key, 'Value': principalId}])
         except ClientError as e:

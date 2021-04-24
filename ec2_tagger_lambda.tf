@@ -1,7 +1,8 @@
 resource "aws_lambda_function" "terraform_ec2_tagger" {
    function_name = "terraform_ec2_tagger"
    filename = "ec2_tagger.zip"
-   handler = "lambda.handler"
+  #  handler = "lambda.lambda_handler"
+   handler = "ec2_tagger_lambda.lambda_handler"
    runtime = "python3.8"
    role = aws_iam_role.terraform_ec2_tagger_role.arn
 }
@@ -13,6 +14,8 @@ resource "aws_iam_role" "terraform_ec2_tagger_role" {
 {
   "Version": "2012-10-17",
   "Statement": [
+
+    
     {
       "Action": "sts:AssumeRole",
       "Principal": {
@@ -50,3 +53,8 @@ resource "aws_iam_policy_attachment" "terraform_ec2_tagger_policy_attachement" {
   policy_arn = aws_iam_policy.terraform_ec2_tagger_policy.arn
 }
 
+# resource "aws_lambda_event_source_mapping" "example" {
+#   event_source_arn  = aws_dynamodb_table.example.stream_arn
+#   function_name     = aws_lambda_function.example.arn
+#   starting_position = "LATEST"
+# }

@@ -48,6 +48,11 @@ resource "aws_cloudwatch_event_rule" "terraform_ec2_events" {
   "detail": {
     "eventSource": [
       "ec2.amazonaws.com"
+    ],
+    "eventName": [
+      "RunInstances",
+      "StartInstances",
+      "StopInstances"
     ]
   }
 }
@@ -56,8 +61,8 @@ EOF
 
 resource "aws_cloudwatch_event_target" "terraform_iam_events" {
   rule      = aws_cloudwatch_event_rule.terraform_iam_events.name
-  target_id = "terraform_ec2_tagger"
-  arn       = aws_lambda_function.terraform_ec2_tagger.arn
+  target_id = "terraform_iam_key_tagger"
+  arn       = aws_lambda_function.terraform_iam_key_tagger.arn
 }
 
 resource "aws_cloudwatch_event_target" "terraform_rds_events" {
@@ -71,3 +76,5 @@ resource "aws_cloudwatch_event_target" "terraform_ec2_events" {
   target_id = "terraform_ec2_tagger"
   arn       = aws_lambda_function.terraform_ec2_tagger.arn
 }
+
+
